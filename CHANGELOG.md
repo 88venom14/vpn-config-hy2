@@ -7,7 +7,7 @@
 ### Fixed
 - `install.sh` and `validate.sh` no longer wrapped in Markdown fences — both are valid shell scripts again
 - Placeholders changed from `ВАШЕ_НАЗВАНИЕ_ПРОКСИ` / `НАЗВАНИЕ_ИЛИ_IP_СЕРВЕРА` / `ИМЯ:ПАРОЛЬ` to `YOUR_PROXY_NAME` / `YOUR_SERVER` / `YOUR_PASSWORD` / `YOUR_SNI`; the previous values contained spaces and produced invalid YAML
-- Removed personal SNI domain `example.com` from `sniffer.skip-domain` and `proxies[].sni`
+- Removed the previously hardcoded SNI domain from `sniffer.skip-domain` and `proxies[].sni`
 - `validate.sh` now fails on leftover placeholders
 - `validate.sh` now verifies that every rule target is a known proxy group and that every `RULE-SET` reference has a matching `rule-providers` entry
 - `validate.sh` documents exit codes and supports a configurable config path
