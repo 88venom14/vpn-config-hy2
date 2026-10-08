@@ -290,13 +290,3 @@ sni: YOUR_SNI
 Важно помнить, что любой пользователь, получивший URL удалённого YAML, сможет загрузить содержимое конфигурации.
 
 ---
-
-## GitHub
-
-Repository:
-
-https://github.com/88venom14/vpn-config-hy2
-
-Raw config:
-
-https://raw.githubusercontent.com/88venom14/vpn-config-hy2/main/config-hy2.yaml
