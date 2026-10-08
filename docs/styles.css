@@ -48,17 +48,12 @@ button { font: inherit; }
 }
 .nav-wrap { min-height: 76px; display: flex; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -.02em; }
-/* Shield artwork has transparent corners, so the chip keeps a soft white pad
-   instead of the dark rounded square the old text mark used. */
+/* Artwork is cropped to the shield's own bounds and sits on the page
+   background directly: no chip, no fill, no border. */
 .brand-mark {
   display: block;
-  width: 38px;
-  height: 38px;
-  padding: 5px;
-  border-radius: 12px;
-  background: rgba(255, 247, 240, .92);
-  box-shadow: 0 8px 20px rgba(38, 28, 26, .12);
-  border: 1px solid rgba(38, 28, 26, .07);
+  width: 46px;
+  height: 46px;
 }
 .brand-text { font-size: 14px; }
 .nav { display: flex; justify-content: center; gap: 26px; flex: 1; }
