@@ -6,3 +6,8 @@
 *.yml text eol=lf
 
 *.md text eol=crlf
+
+# Web assets are served as-is by GitHub Pages; keep LF everywhere.
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
