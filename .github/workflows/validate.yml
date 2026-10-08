@@ -1,0 +1,54 @@
+name: validate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate config and scripts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Mihomo
+        run: |
+          set -euo pipefail
+          version=$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | grep -oP '"tag_name":\s*"\Kv[0-9][^"]*' | head -1)
+          curl -fsSL --retry 3 -o mihomo.gz \
+            "https://github.com/MetaCubeX/mihomo/releases/download/${version}/mihomo-linux-amd64-${version}.gz"
+          gunzip -f mihomo.gz
+          chmod +x mihomo
+          sudo mv mihomo /usr/local/bin/mihomo
+          mihomo -v
+
+      - name: Shell syntax check
+        run: |
+          set -euo pipefail
+          shellcheck --severity=warning install.sh validate.sh
+          bash -n install.sh
+          bash -n validate.sh
+
+      - name: Validate template (placeholders expected)
+        run: |
+          set -euo pipefail
+          sed -e 's/YOUR_PROXY_NAME/Test Proxy/g' \
+              -e 's/YOUR_SERVER/example.com/g' \
+              -e 's/YOUR_PASSWORD/user:pass/g' \
+              -e 's/YOUR_SNI/example.com/g' \
+              config-hy2.yaml > config.rendered.yaml
+          mihomo -t -f config.rendered.yaml
+
+      - name: Validate scripts against rendered config
+        run: |
+          set -euo pipefail
+          ./validate.sh config.rendered.yaml

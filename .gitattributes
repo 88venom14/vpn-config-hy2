@@ -1,0 +1,8 @@
+# Shell scripts must keep LF, otherwise bash fails on Linux.
+*.sh text eol=lf
+
+# Config is served as a raw file to Linux servers.
+*.yaml text eol=lf
+*.yml text eol=lf
+
+*.md text eol=crlf

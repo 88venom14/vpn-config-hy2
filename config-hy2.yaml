@@ -15,8 +15,6 @@ sniffer:
   enable: true
   force-dns-mapping: true
   parse-pure-ip: true
-  skip-domain:
-    - example.com
   sniff:
     HTTP:
       ports:
@@ -71,12 +69,12 @@ dns:
     - https://cloudflare-dns.com/dns-query
 
 proxies:
-  - name: "ВАШЕ_НАЗВАНИЕ_ПРОКСИ"
+  - name: "YOUR_PROXY_NAME"
     type: hysteria2
-    server: НАЗВАНИЕ_ИЛИ_IP_СЕРВЕРА
+    server: YOUR_SERVER
     port: 4433
-    password: "ИМЯ:ПАРОЛЬ"
-    sni: example.com
+    password: "YOUR_PASSWORD"
+    sni: YOUR_SNI
     skip-cert-verify: false
 
 proxy-groups:
@@ -89,8 +87,8 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
     type: select
     proxies:
-      - "ВАШЕ_НАЗВАНИЕ_ПРОКСИ"
-    default-selected: "ВАШЕ_НАЗВАНИЕ_ПРОКСИ"
+      - "YOUR_PROXY_NAME"
+    default-selected: "YOUR_PROXY_NAME"
 
   # ==================================================
   # ОБЩИЙ ПЕРЕКЛЮЧАТЕЛЬ
