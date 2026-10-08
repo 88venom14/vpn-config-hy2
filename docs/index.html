@@ -1,82 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hysteria2 / Mihomo Config</title>
-<meta name="description" content="Готовый шаблон конфигурации Mihomo / Clash для подключения через Hysteria2.">
-<meta property="og:title" content="Hysteria2 / Mihomo Config">
-<meta property="og:description" content="Готовый шаблон конфигурации Mihomo / Clash для подключения через Hysteria2.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127760;</text></svg>">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#261C1A">
+  <meta name="description" content="Hysteria2 / Mihomo Config — готовый шаблон конфигурации Mihomo / Clash для подключения через Hysteria2.">
+  <title>Hysteria2 / Mihomo Config</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9679;</text></svg>">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-<a class="skip-link" href="#content">Перейти к содержимому</a>
-
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="./index.html">
-      <span class="brand-mark" aria-hidden="true">HY2</span>
-      <span class="brand-text">
-        <strong>vpn-config-hy2</strong>
-        <span class="brand-sub">Mihomo / Clash template</span>
-      </span>
-    </a>
-
-    <nav class="topnav">
-      <a class="gh-link" href="https://github.com/88venom14/vpn-config-hy2" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        <span>GitHub</span>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Hysteria2 / Mihomo Config">
+        <span class="brand-mark">HY<span>2</span></span>
+        <span class="brand-text">Mihomo Config</span>
       </a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему">
-        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
-      </button>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap layout">
-
-  <aside class="sidebar" id="sidebar">
-    <div class="card toc-card">
-      <h2 class="toc-title">На странице</h2>
-      <nav id="toc" class="toc" aria-label="Содержание"></nav>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a href="#config">Настройка</a>
+        <a href="#readme">README</a>
+      </nav>
+      <a class="nav-action" href="https://github.com/88venom14/vpn-config-hy2" target="_blank" rel="noreferrer">GitHub ↗</a>
     </div>
+  </header>
 
-    <div class="card meta-card">
-      <h2 class="toc-title">Репозиторий</h2>
-      <ul class="meta-list">
-        <li><span class="meta-k">Файл</span><a id="meta-file" href="#" target="_blank" rel="noopener noreferrer">README.md</a></li>
-        <li><span class="meta-k">Ветка</span><code id="meta-branch">main</code></li>
-        <li><span class="meta-k">Обновлён</span><span id="meta-updated">—</span></li>
-      </ul>
-    </div>
-  </aside>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Mihomo / Clash · Hysteria2</div>
+        <h1>Спокойный интерфейс.<br><em>Чёткий контроль</em> трафика.</h1>
+        <p class="hero-text">Готовый шаблон конфигурации Mihomo / Clash для Hysteria2 — с TUN, DoH, отдельными маршрутами и удобным управлением по сервисам.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#install">Начать установку <span>↓</span></a>
+          <a class="btn btn-secondary" href="https://raw.githubusercontent.com/88venom14/vpn-config-hy2/main/config-hy2.yaml" target="_blank" rel="noreferrer">Открыть YAML <span>↗</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i>01</i> Поставить конфиг</span>
+          <span><i>02</i> Заменить 4 поля</span>
+          <span><i>03</i> Проверить и подключить</span>
+        </div>
+      </div>
 
-  <article class="content card" id="content" aria-live="polite">
-    <div class="loading" id="loading">
-      <div class="spinner" aria-hidden="true"></div>
-      <p>Загружаю README…</p>
-    </div>
-  </article>
+      <div class="hero-card" aria-label="Краткая схема конфигурации">
+        <div class="card-topline">
+          <span>config-hy2.yaml</span>
+          <span class="tiny-pill">template</span>
+        </div>
+        <div class="code-preview">
+          <div><span class="ln">01</span><span class="muted">proxies</span><span class="punct">:</span></div>
+          <div><span class="ln">02</span>&nbsp;&nbsp;- <span class="key">name</span><span class="punct">:</span> <span class="str">"YOUR_PROXY_NAME"</span></div>
+          <div><span class="ln">03</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">type</span><span class="punct">:</span> <span class="str">hysteria2</span></div>
+          <div><span class="ln">04</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">server</span><span class="punct">:</span> <span class="str">YOUR_SERVER</span></div>
+          <div><span class="ln">05</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">port</span><span class="punct">:</span> <span class="num">4433</span></div>
+          <div><span class="ln">06</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">password</span><span class="punct">:</span> <span class="str">"YOUR_PASSWORD"</span></div>
+          <div><span class="ln">07</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">sni</span><span class="punct">:</span> <span class="str">YOUR_SNI</span></div>
+        </div>
+        <div class="hero-card-foot">
+          <span>валидный YAML до подстановки</span>
+          <span class="spark">✦</span>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section class="section container" id="features">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">01 / Возможности</div>
+          <h2>Всё нужное —<br><span>в одном шаблоне.</span></h2>
+        </div>
+        <p>Конфигурация собрана вокруг понятных переключателей: общая маршрутизация, отдельные сервисы и автоматические rule-providers.</p>
+      </div>
 
-<footer class="wrap footer">
-  <p>
-    Страница рендерит <code>README.md</code> из репозитория
-    <a href="https://github.com/88venom14/vpn-config-hy2" target="_blank" rel="noopener noreferrer">88venom14/vpn-config-hy2</a>.
-  </p>
-  <p class="footer-meta" id="footer-meta"></p>
-</footer>
+      <div class="feature-grid">
+        <article class="feature-card feature-card-wide">
+          <div class="icon-badge">⌁</div>
+          <h3>Hysteria2</h3>
+          <p>Подключение через Hysteria2 с отдельным proxy-профилем и SNI.</p>
+          <div class="feature-tag">proxy</div>
+        </article>
+        <article class="feature-card">
+          <div class="icon-badge">◌</div>
+          <h3>TUN</h3>
+          <p>Маршрутизация трафика через TUN-режим.</p>
+          <div class="feature-tag">network</div>
+        </article>
+        <article class="feature-card">
+          <div class="icon-badge">DNS</div>
+          <h3>DNS over HTTPS</h3>
+          <p>Отдельная DNS-конфигурация с DoH.</p>
+          <div class="feature-tag">privacy</div>
+        </article>
+        <article class="feature-card feature-card-wide">
+          <div class="icon-badge">↗</div>
+          <h3>Тонкая маршрутизация</h3>
+          <p>Spotify, Telegram, TikTok, Apple, Россия и Torrents получают свои переключатели DIRECT / VPN.</p>
+          <div class="feature-chips">
+            <span>Spotify</span><span>Telegram</span><span>TikTok</span><span>Apple</span><span>🇷🇺 Россия</span><span>⬇ Torrents</span>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="icon-badge">◎</div>
+          <h3>GLOBAL</h3>
+          <p>Один переключатель для трафика, который не попал под отдельные правила.</p>
+          <div class="feature-tag">control</div>
+        </article>
+        <article class="feature-card">
+          <div class="icon-badge">↻</div>
+          <h3>Rule Providers</h3>
+          <p>Удалённые наборы правил обновляются автоматически по interval.</p>
+          <div class="feature-tag">auto update</div>
+        </article>
+      </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
-<script src="app.js"></script>
+    <section class="section container" id="config">
+      <div class="section-heading compact">
+        <div>
+          <div class="section-kicker">02 / Настройка</div>
+          <h2>Четыре поля,<br><span>и шаблон готов.</span></h2>
+        </div>
+        <p>Перед запуском замени только эти значения. Остальная структура уже подготовлена для Mihomo / Clash.</p>
+      </div>
+
+      <div class="config-panel">
+        <div class="config-table-head"><span>Плейсхолдер</span><span>Где используется</span><span>Пример</span></div>
+        <div class="config-row"><code>YOUR_PROXY_NAME</code><span>proxies[].name + группа VPN</span><b>Мой VPN</b></div>
+        <div class="config-row"><code>YOUR_SERVER</code><span>proxies[].server</span><b>vpn.example.com</b></div>
+        <div class="config-row"><code>YOUR_PASSWORD</code><span>proxies[].password</span><b>user:password</b></div>
+        <div class="config-row"><code>YOUR_SNI</code><span>proxies[].sni</span><b>vpn.example.com</b></div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-symbol">i</div>
+        <div><strong>Важно:</strong> значения подставляются без лишних пробелов. После переименования прокси то же имя нужно оставить в группе <code>🌍 VPN</code>.</div>
+      </div>
+
+      <div class="yaml-card">
+        <div class="yaml-head"><span>Минимальный фрагмент</span><button class="copy-btn" data-copy="proxies:
+  - name: &quot;YOUR_PROXY_NAME&quot;
+    type: hysteria2
+    server: YOUR_SERVER
+    port: 4433
+    password: &quot;YOUR_PASSWORD&quot;
+    sni: YOUR_SNI
+    skip-cert-verify: false">Скопировать</button></div>
+        <pre><code><span class="muted">proxies:</span>
+  - <span class="key">name</span>: <span class="str">"YOUR_PROXY_NAME"</span>
+    <span class="key">type</span>: <span class="str">hysteria2</span>
+    <span class="key">server</span>: <span class="str">YOUR_SERVER</span>
+    <span class="key">port</span>: <span class="num">4433</span>
+    <span class="key">password</span>: <span class="str">"YOUR_PASSWORD"</span>
+    <span class="key">sni</span>: <span class="str">YOUR_SNI</span>
+    <span class="key">skip-cert-verify</span>: <span class="bool">false</span></code></pre>
+      </div>
+    </section>
+
+    <section class="section container" id="install">
+      <div class="section-heading compact">
+        <div>
+          <div class="section-kicker">03 / Установка</div>
+          <h2>Подключение<br><span>без лишних шагов.</span></h2>
+        </div>
+        <p>Конфиг можно скачать напрямую или поставить готовым скриптом <code>install.sh</code>, который делает бэкап текущей версии.</p>
+      </div>
+
+      <div class="install-grid">
+        <article class="install-card featured-step">
+          <div class="step-no">01</div>
+          <h3>Скачать YAML</h3>
+          <p>Получить актуальную версию конфигурации напрямую из main.</p>
+          <div class="command"><code>curl -fsSL https://raw.githubusercontent.com/88venom14/vpn-config-hy2/main/config-hy2.yaml \
+  -o /path/to/config.yaml</code><button class="copy-btn" data-copy="curl -fsSL https://raw.githubusercontent.com/88venom14/vpn-config-hy2/main/config-hy2.yaml -o /path/to/config.yaml" aria-label="Скопировать команду">⧉</button></div>
+        </article>
+        <article class="install-card">
+          <div class="step-no">02</div>
+          <h3>install.sh</h3>
+          <p>Скрипт создаёт каталог, качает конфиг и сохраняет прежнюю версию с меткой времени.</p>
+          <div class="mini-list"><span>✓ бэкап .bak.дата</span><span>✓ проверка curl</span><span>✓ права 0644</span></div>
+        </article>
+        <article class="install-card">
+          <div class="step-no">03</div>
+          <h3>Проверить и подключить</h3>
+          <p>validate.sh проверяет плейсхолдеры, YAML и ссылки на rule-providers.</p>
+          <div class="command"><code>./validate.sh</code><button class="copy-btn" data-copy="./validate.sh" aria-label="Скопировать команду">⧉</button></div>
+          <a class="inline-link" href="https://raw.githubusercontent.com/88venom14/vpn-config-hy2/main/config-hy2.yaml" target="_blank" rel="noreferrer">Открыть актуальный YAML →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="readme">
+      <div class="section-heading compact">
+        <div>
+          <div class="section-kicker">04 / Документация</div>
+          <h2>README<br><span>из репозитория.</span></h2>
+        </div>
+        <p>Ниже — содержимое <code>README.md</code> с ветки <code>main</code>. Оно подтягивается при открытии страницы, поэтому правки в репозитории появляются здесь без пересборки.</p>
+      </div>
+
+      <div class="readme-meta">
+        <span class="readme-chip"><i class="dot"></i> README.md · main</span>
+        <span class="readme-chip" id="readme-updated">обновлён: —</span>
+        <a class="readme-chip link" href="https://github.com/88venom14/vpn-config-hy2/blob/main/README.md" target="_blank" rel="noreferrer">смотреть в GitHub ↗</a>
+      </div>
+
+      <article class="readme-card" id="readme-content" aria-live="polite">
+        <div class="readme-loading"><span class="spinner" aria-hidden="true"></span><span>Загружаю README…</span></div>
+      </article>
+    </section>
+
+    <section class="section container" id="security">
+      <div class="security-card">
+        <div class="security-icon">!</div>
+        <div>
+          <div class="section-kicker">05 / Безопасность</div>
+          <h2>Не публикуй рабочие<br><span>данные доступа.</span></h2>
+          <p>В публичном репозитории оставляй только плейсхолдеры. Рабочий пароль Hysteria2, SNI и адрес сервера нужно подставлять отдельно. Помни: любой пользователь, у которого есть URL удалённого YAML, сможет скачать его содержимое.</p>
+        </div>
+        <a class="btn btn-light" href="https://github.com/88venom14/vpn-config-hy2" target="_blank" rel="noreferrer">Репозиторий ↗</a>
+      </div>
+    </section>
+
+    <section class="closing container">
+      <div class="closing-inner">
+        <span class="closing-mark">HY2</span>
+        <h2>Меньше шума.<br><em>Больше контроля.</em></h2>
+        <p>Hysteria2 / Mihomo Config — аккуратный шаблон для ежедневной работы с маршрутизацией.</p>
+        <a class="btn btn-primary" href="https://github.com/88venom14/vpn-config-hy2" target="_blank" rel="noreferrer">Открыть GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <span>Hysteria2 / Mihomo Config</span>
+    <span>main · 88venom14/vpn-config-hy2</span>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite">Скопировано</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
